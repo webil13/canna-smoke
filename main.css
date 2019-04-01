@@ -1,0 +1,189 @@
+/* @font-face {
+  font-family: "Prima-Serif-Bold";
+  src: url('prima_serif_bold_bt.woff') format('woff'), url("prima_serif_bold_bt.ttf") format("truetype");
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#smoke-logo {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+#smoke-logo:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #f00, #0f0);
+  mix-blend-mode: color;
+  pointer-events: none;
+}
+
+.logo-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  font-size: 200px;
+  font-family: 'Domine';
+}
+
+.cannabar {
+  padding: 15px;
+  letter-spacing: -25px;
+  line-height: 150px;
+  font-weight: 500;
+  margin: 5px;
+  animation: borderPopup linear;
+  animation-duration: 5.5s;
+  border: 8px solid #fff;
+  color: #fff;
+}
+
+p.cannabar span {
+  display: inline-block;
+  opacity: 0;
+  animation: revealLeft 3s linear forwards 1;
+}
+
+svg {
+  height: 150px;
+  width: 150px;
+  margin: 0 -25px;
+  padding: 0;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.coffeeshop {
+  font-size: 30px;
+  margin: 0;
+  color: #fff;
+}
+
+p.coffeeshop span {
+  display: inline-block;
+  opacity: 0;
+  animation: revealTop 3s linear forwards;
+  animation-delay: 5s;
+}
+
+/* animations */
+
+/* Letters cannabar and weed leaf reveal */
+
+@keyframes revealLeft {
+  0% {
+    opacity: .9;
+    transform: rotateY(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+p.cannabar span:nth-child(1) {
+  animation-delay: .5s;
+}
+
+p.cannabar span:nth-child(2) {
+  animation-delay: 1s;
+}
+
+p.cannabar span:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+p.cannabar span:nth-child(5) {
+  animation-delay: 2s;
+}
+
+p.cannabar span:nth-child(6) {
+  animation-delay: 2.5s;
+}
+
+p.cannabar span:nth-child(7) {
+  animation-delay: 3s;
+}
+
+p.cannabar span:nth-child(9) {
+  animation-delay: 3.5s;
+}
+
+p.cannabar span:nth-child(10) {
+  animation-delay: 4s;
+}
+
+p.cannabar span:nth-child(11) {
+  animation-delay: 4.5s;
+}
+
+/* Logo border popup */
+
+@keyframes borderPopup {
+  0% {
+    opacity: 0;
+    border: none;
+  }
+  25% {
+    opacity: 0.8;
+    border: 8px solid #fff;
+    transform: scale(.8);
+    transition: transform ease;
+  }
+  50% {
+    opacity: .7;
+    border: 8px solid #fff;
+    transform: scale(1.1);
+    transition: transform ease;
+  }
+  75% {
+    opacity: .9;
+    border: 8px solid #fff;
+    transform: scale(.9);
+    transition: transform ease;
+  }
+  100% {
+    opacity: 1;
+    border: 8px solid #fff;
+    transform: scale(1);
+    transition: transform ease;
+  }
+}
+
+/* Coffeeshop reveal from top */
+
+@keyframes revealTop {
+  0% {
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+p.coffeeshop span:nth-child(1) {
+  animation-delay: 5s;
+}
+
+p.coffeeshop span:nth-child(2) {
+  animation-delay: 5.5s;
+}
+
+p.coffeeshop span:nth-child(3) {
+  animation-delay: 6s;
+}
