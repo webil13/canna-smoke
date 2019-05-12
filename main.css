@@ -1,17 +1,17 @@
 /* @font-face {
-  font-family: "Prima-Serif-Bold";
-  src: url('prima_serif_bold_bt.woff') format('woff'), url("prima_serif_bold_bt.ttf") format("truetype");
+  font-family: "Prima-Serif-Bold-Bt";
+  src: url('./fonts/prima_serif_bold_bt.woff') format('woff'), url("./fonts/prima_serif_bold_bt.ttf") format("truetype");
 } */
+
+@font-face {
+  font-family: "Prima-Serif-BT-Roman";
+  src: url('./fonts/PrimaSerifBT-Roman.otf') format('otf');
+}
 
 body {
   margin: 0;
   padding: 0;
-}
-
-#smoke-logo {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
+  box-sizing: border-box;
 }
 
 #smoke-logo:before {
@@ -26,24 +26,31 @@ body {
   pointer-events: none;
 }
 
+#smoke-logo {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
 .logo-wrapper {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10%;
+  left: 10%;
   box-sizing: border-box;
   font-size: 200px;
-  font-family: 'Domine';
+  /* font-family: 'Domine'; */
+  font-family: "Prima-Serif-BT-Roman";
+  text-align: left;
 }
 
 .cannabar {
-  padding: 15px;
+  padding: 15px 10px 25px 10px;
   letter-spacing: -25px;
   line-height: 150px;
-  font-weight: 500;
+  font-weight: 400;
   margin: 5px;
-  animation: borderPopup linear;
   animation-duration: 5.5s;
-  border: 8px solid #fff;
+  overflow: hidden;
   color: #fff;
 }
 
@@ -53,11 +60,53 @@ p.cannabar span {
   animation: revealLeft 3s linear forwards 1;
 }
 
+p.cannabar span.border {
+  position: absolute;
+  transition: 250ms ease;
+  box-sizing: border-box;
+  background: #fff;
+  /* animation: borderSlideIn linear forwards;
+  animation-duration: 5500ms; */
+}
+
+p.cannabar span.border:nth-child(1) {
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 100%;
+  transform: translateX(-100%);
+}
+
+p.cannabar span.border:nth-child(2) {
+  top: 0;
+  right: 0;
+  height: calc(100% - 40px);
+  width: 10px;
+  transform: translateY(100%);
+}
+
+p.cannabar span.border:nth-child(3) {
+  bottom: 40px;
+  right: 0;
+  height: 10px;
+  width: 100%;
+  transform: translateX(100%);
+}
+
+p.cannabar span.border:nth-child(4) {
+  top: 0;
+  left: 0;
+  height: calc(100% - 40px);
+  width: 10px;
+  transform: translateY(-100%);
+}
+
 svg {
   height: 150px;
   width: 150px;
   margin: 0 -25px;
   padding: 0;
+  /* box-shadow: 1px 1px 15px #0f0; */
 }
 
 video {
@@ -80,6 +129,17 @@ p.coffeeshop span {
 }
 
 /* animations */
+
+/* Border SlideIn Animation */
+
+@keyframes borderSlideIn {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
 /* Letters cannabar and weed leaf reveal */
 
@@ -128,39 +188,6 @@ p.cannabar span:nth-child(10) {
 
 p.cannabar span:nth-child(11) {
   animation-delay: 4.5s;
-}
-
-/* Logo border popup */
-
-@keyframes borderPopup {
-  0% {
-    opacity: 0;
-    border: none;
-  }
-  25% {
-    opacity: 0.8;
-    border: 8px solid #fff;
-    transform: scale(.8);
-    transition: transform ease;
-  }
-  50% {
-    opacity: .7;
-    border: 8px solid #fff;
-    transform: scale(1.1);
-    transition: transform ease;
-  }
-  75% {
-    opacity: .9;
-    border: 8px solid #fff;
-    transform: scale(.9);
-    transition: transform ease;
-  }
-  100% {
-    opacity: 1;
-    border: 8px solid #fff;
-    transform: scale(1);
-    transition: transform ease;
-  }
 }
 
 /* Coffeeshop reveal from top */
