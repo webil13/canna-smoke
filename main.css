@@ -1,17 +1,14 @@
-/* @font-face {
-  font-family: "Prima-Serif-Bold-Bt";
-  src: url('./fonts/prima_serif_bold_bt.woff') format('woff'), url("./fonts/prima_serif_bold_bt.ttf") format("truetype");
-} */
-
 @font-face {
-  font-family: "Prima-Serif-BT-Roman";
+  font-family: "Prima Serif";
   src: url('./fonts/PrimaSerifBT-Roman.otf') format('otf');
+  src: url('./fonts/PrimaSerifBT-Roman.woff') format('woff');
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 #smoke-logo:before {
@@ -27,37 +24,33 @@ body {
 }
 
 #smoke-logo {
-  display: inline-block;
   width: 100%;
   height: 100%;
 }
 
 .logo-wrapper {
   position: absolute;
-  top: 10%;
-  left: 10%;
+  top: 20%;
+  left: 20%;
   box-sizing: border-box;
   font-size: 200px;
   /* font-family: 'Domine'; */
-  font-family: "Prima-Serif-BT-Roman";
-  text-align: left;
+  font-family: "Prima Serif";
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 0;
+  overflow: hidden;
 }
 
 .cannabar {
   padding: 15px 10px 25px 10px;
   letter-spacing: -25px;
   line-height: 150px;
-  font-weight: 400;
   margin: 5px;
   animation-duration: 5.5s;
-  overflow: hidden;
   color: #fff;
-}
-
-p.cannabar span {
-  display: inline-block;
-  opacity: 0;
-  animation: revealLeft 3s linear forwards 1;
 }
 
 p.cannabar span.border {
@@ -65,8 +58,6 @@ p.cannabar span.border {
   transition: 250ms ease;
   box-sizing: border-box;
   background: #fff;
-  /* animation: borderSlideIn linear forwards;
-  animation-duration: 5500ms; */
 }
 
 p.cannabar span.border:nth-child(1) {
@@ -75,6 +66,20 @@ p.cannabar span.border:nth-child(1) {
   height: 10px;
   width: 100%;
   transform: translateX(-100%);
+  animation: borderSlideInLeft linear forwards;
+  animation-duration: 500ms;
+  animation-delay: 6s;
+}
+
+/* Border SlideIn from Left Animation */
+
+@keyframes borderSlideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 p.cannabar span.border:nth-child(2) {
@@ -82,7 +87,21 @@ p.cannabar span.border:nth-child(2) {
   right: 0;
   height: calc(100% - 40px);
   width: 10px;
-  transform: translateY(100%);
+  transform: translateY(120%);
+  animation: borderSlideInTop linear forwards;
+  animation-duration: 500ms;
+  animation-delay: 6.5s;
+}
+
+/* Border SlideIn from Top Animation */
+
+@keyframes borderSlideInTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 p.cannabar span.border:nth-child(3) {
@@ -91,6 +110,20 @@ p.cannabar span.border:nth-child(3) {
   height: 10px;
   width: 100%;
   transform: translateX(100%);
+  animation: borderSlideInRight linear forwards;
+  animation-duration: 500ms;
+  animation-delay: 5s;
+}
+
+/* Border SlideIn from Right Animation */
+
+@keyframes borderSlideInRight {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 p.cannabar span.border:nth-child(4) {
@@ -99,6 +132,20 @@ p.cannabar span.border:nth-child(4) {
   height: calc(100% - 40px);
   width: 10px;
   transform: translateY(-100%);
+  animation: borderSlideInBottom linear forwards;
+  animation-duration: 500ms;
+  animation-delay: 5.5s;
+}
+
+/* Border SlideIn from Bottom Animation */
+
+@keyframes borderSlideInBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 svg {
@@ -106,7 +153,6 @@ svg {
   width: 150px;
   margin: 0 -25px;
   padding: 0;
-  /* box-shadow: 1px 1px 15px #0f0; */
 }
 
 video {
@@ -121,25 +167,13 @@ video {
   color: #fff;
 }
 
-p.coffeeshop span {
+p.cannabar span.letter {
   display: inline-block;
   opacity: 0;
-  animation: revealTop 3s linear forwards;
-  animation-delay: 5s;
+  animation: revealLeft 5s linear forwards 1;
 }
 
 /* animations */
-
-/* Border SlideIn Animation */
-
-@keyframes borderSlideIn {
-  0% {
-    transform: translateX(50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 
 /* Letters cannabar and weed leaf reveal */
 
@@ -154,40 +188,47 @@ p.coffeeshop span {
   }
 }
 
-p.cannabar span:nth-child(1) {
+p.cannabar span.letter:nth-child(5) {
   animation-delay: .5s;
 }
 
-p.cannabar span:nth-child(2) {
+p.cannabar span.letter:nth-child(6) {
   animation-delay: 1s;
 }
 
-p.cannabar span:nth-child(3) {
+p.cannabar span.letter:nth-child(7) {
   animation-delay: 1.5s;
 }
 
-p.cannabar span:nth-child(5) {
+p.cannabar span.letter:nth-child(9) {
   animation-delay: 2s;
 }
 
-p.cannabar span:nth-child(6) {
+p.cannabar span.letter:nth-child(10) {
   animation-delay: 2.5s;
 }
 
-p.cannabar span:nth-child(7) {
+p.cannabar span.letter:nth-child(11) {
   animation-delay: 3s;
 }
 
-p.cannabar span:nth-child(9) {
+p.cannabar span.letter:nth-child(13) {
   animation-delay: 3.5s;
 }
 
-p.cannabar span:nth-child(10) {
+p.cannabar span.letter:nth-child(14) {
   animation-delay: 4s;
 }
 
-p.cannabar span:nth-child(11) {
+p.cannabar span.letter:nth-child(15) {
   animation-delay: 4.5s;
+}
+
+p.coffeeshop span {
+  display: inline-block;
+  opacity: 0;
+  animation: revealTop 3s linear forwards;
+  animation-delay: 6.5s;
 }
 
 /* Coffeeshop reveal from top */
@@ -204,13 +245,13 @@ p.cannabar span:nth-child(11) {
 }
 
 p.coffeeshop span:nth-child(1) {
-  animation-delay: 5s;
+  animation-delay: 6.5s;
 }
 
 p.coffeeshop span:nth-child(2) {
-  animation-delay: 5.5s;
+  animation-delay: 7s;
 }
 
 p.coffeeshop span:nth-child(3) {
-  animation-delay: 6s;
+  animation-delay: 7.5s;
 }
